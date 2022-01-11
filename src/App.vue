@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MultiplePhones :phonesInputString="sampleString[1]" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MultiplePhones from "./components/MultiplePhones.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MultiplePhones,
+  },
+  data() {
+    return {
+      sampleString: [
+        "+123 456 7889;WA: abc123;hello",
+        "+123 9851 1111 ; WA: +44 741 579 1111; old: +33 7 53 41 11 11 ; mobile: sdfgsdfg",
+        "Home: 234-8643; mobile: 7513-98 (don’t call after 20); +28-7546-38436",
+      ],
+    };
+  },
+};
 </script>
 
 <style>
